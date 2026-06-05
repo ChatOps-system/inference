@@ -1,4 +1,4 @@
-# Inference Service - chatops
+# Inference Service - chatOps
 
 Construido con:
 
