@@ -39,3 +39,7 @@ Descripción de variables:
 - `MODEL_NAME`: Nombre del modelo que se utilizará para la generación del borrador de reporte de incidente.
 - `BASE_URL`: URL del lugar donde estará servido el modelo.
 - `API_KEY`: Clave de acceso al modelo.
+
+6. Documentación API (Swagger)
+
+La documentación está disponible en la ruta `/docs`
