@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from app.config import settings
+from app.models.generic_draft_generator_model import GenericDraftGeneratorModel
 from app.services.chat_service import ChatService
 from app.schemas.detect_incident_dto import DetectIncidentDto
 from app.schemas.detect_incident_response import DetectIncidentResponse
@@ -15,9 +16,13 @@ service = ChatService(
     draftGeneratorModel=OllamaDraftGeneratorModel(
     model_name= settings.MODEL_NAME,
     base_url= settings.BASE_URL,
-    api_key=settings.API_KEY,    
-))
-
+    api_key=settings.API_KEY,
+)    if settings.MODEL_NAME == "qwen2.5:3b" else GenericDraftGeneratorModel(
+    model_name= settings.MODEL_NAME,
+    base_url= settings.BASE_URL,
+    api_key=settings.API_KEY,
+)
+)
 @router.post("/generate-incident-draft",
     response_model=GenerateIncidentDraftResponse,
         responses={

@@ -3,7 +3,7 @@ from openai import OpenAI
 from .draft_generator_model import DraftGeneratorModel
 from app.schemas.incident_draft import IncidentDraft
 
-class OllamaDraftGeneratorModel(DraftGeneratorModel):
+class GenericDraftGeneratorModel(DraftGeneratorModel):
     def __init__(
             self, 
             base_url: str, 
