@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from typing import Literal
 
 
-class IncidentDraft(BaseModel):
+class IncidentSuggestion(BaseModel):
     title: str = Field(..., description="Short incident title")
     description: str = Field(..., description="Detailed incident description")
     severity: Literal["High", "Medium", "Low"] = Field(
