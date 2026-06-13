@@ -1,8 +1,10 @@
 from fastapi import FastAPI
-from app.routers import chat
+from app.incidents.incidents_router import IncidentsRouter
 
 app = FastAPI(
     title="Inference Service",
     version="1.0.0"
 )
-app.include_router(chat.router)
+incidents_router = IncidentsRouter()
+
+app.include_router(incidents_router.router)
